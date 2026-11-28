@@ -1,15 +1,15 @@
-🎯 Business Problem
+Business Problem
 
 Winning a new customer costs far more than keeping an existing one. If the retention team can identify high-risk customers early, they can target offers where they matter most instead of contacting everyone.
 
 Goal: build a model that flags customers likely to churn and shows which factors drive churn.
 
-📊 Dataset
+Dataset
 Source: IBM Telco Customer Churn (Kaggle)
 Size: 7,043 customers, 21 columns
 Content: demographics, subscribed services, contract type, billing and payment details
 Target: Churn (Yes/No), about 26.5% of customers churned (imbalanced data)
-🛠️ Approach
+Approach
 Step	What was done
 1. Cleaning	Converted TotalCharges from text to numeric (11 blanks = brand-new customers, set to 0), dropped customerID
 2. EDA	Churn by tenure, charges, contract, internet service, payment method, support services
@@ -20,7 +20,7 @@ Step	What was done
 7. Threshold	Decision threshold (0.35) chosen from cross-validated training predictions, not the test set
 8. Explainability	Permutation importance to find the main churn drivers
 9. Business view	Risk deciles, cumulative gains and a high-risk customer list
-📈 Results
+Results
 
 Model comparison (5-fold CV ROC-AUC)
 
@@ -53,7 +53,7 @@ Exploratory analysis
 
 Churn by category
 
-🔍 Key Insights
+Key Insights
 Contract type is the strongest signal: month-to-month customers churn far more than 1 or 2 year customers.
 New customers are the most fragile: churn is highest in the first 12 months of tenure.
 Fiber optic customers churn more, especially without online security or tech support.
